@@ -13,7 +13,7 @@ module GrapeEntityMatchers
         @expected_representable = representable
         RSpec::Mocks::setup
       end
-      
+
       def matches?(subject)
         @subject = subject
 
@@ -84,7 +84,7 @@ module GrapeEntityMatchers
       private
 
       def limit_exposure_to_method(entity, method)
-        allow(entity).to receive(:valid_exposures).and_return(
+        allow(entity).to receive(:root_exposures).and_return(
           entity.exposures.slice(method)
         )
       end
